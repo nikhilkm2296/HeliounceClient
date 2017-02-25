@@ -7,14 +7,15 @@ import { Category } from '../../enums/category';
 export class PlaceService {
   _selCategory: Category;
   userPicUrl:   string   = 'https://graph.facebook.com/1436380746381163/picture?type=large';
-  userNames:    string[] = [ 'User 1', 'User 2', 'User 3', 'User 1111111111 Long Name' ];
-  placeNames:   string[] = [ 'Place 1', 'Place 2', 'Place 3', 'Place 1111111111 Long Name' ];
-  distances:    string[] = [ '1.1 mi', '8.1 mi', '30.11 mi', '15.5 mi' ];
-  eta:          string[] = [ '10 mins', '30 mins', '1h 2 mins', '45 mins' ];
+  userNames:    string[] = [ 'User 1', 'User 2', 'User 3', 'User Long Name 4', 'User 5' ];
+  placeNames:   string[] = [ 'Place 1', 'Place 2', 'Place 3', 'Place Long Name 4', 'Place 5' ];
+  distances:    string[] = [ '1.1 mi', '8.1 mi', '30.11 mi', '15.5 mi', '10 mi' ];
+  eta:          string[] = [ '10 mins', '30 mins', '1h 2 mins', '45 mins', '33 mins' ];
   timeCreated:  string[] = [
     '24th Mar 16 4:00 PM',
     '26th Mar 16 6:00 PM',
     '3rd May 16 8:00 PM',
+    '24th May 16 2:30 AM',
     '24th May 16 2:30 AM'
   ];
   comment: string = "Place has breathtaking view. Never expected to enjoy so much at his place.\
@@ -22,7 +23,7 @@ export class PlaceService {
 
   getPlaces(): IPlace[] {
     let places = [];
-    for( let i=0; i < 4; i++ ) {
+    for( let i=0; i < 5; i++ ) {
       let place = this.getPlace(
         this.placeNames[ i ],
         this.distances[ i ],

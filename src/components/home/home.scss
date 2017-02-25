@@ -92,13 +92,13 @@ button {
 }
 
 $menu-item-margin-top: 0.2em;
-$menu-bg-color: #44CCC9;
-$menu-icon-color: white;
-$menu-icon-size: 1.4em;
-$menu-font-color: white;
-$menu-font-family: opensans;
-$menu-font-size: 1.2em;
-$menu-letter-spacing: 0.1em;
+$menu-bg-color:        #44CCC9;
+$menu-icon-color:      white;
+$menu-icon-size:       1.4em;
+$menu-font-color:      white;
+$menu-font-family:     opensans;
+$menu-font-size:       1.2em;
+$menu-letter-spacing:  0.1em;
 $menu-user-profile-height: 100px;
 $menu-user-profile-bgcolor: white;
 $menu-user-profile-font-size: 1.3em;
@@ -142,13 +142,13 @@ h2 {
   &.app {
     &.menu {
       &.user-profile {
-        font-family: $menu-font-family;
-        font-size: $menu-user-profile-font-size;
+        font-family:    $menu-font-family;
+        font-size:      $menu-user-profile-font-size;
         letter-spacing: $menu-user-profile-letter-spacing;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        text-align: left;
-        font-weight: bold;
+        text-overflow:  ellipsis;
+        overflow:       hidden;
+        text-align:     left;
+        font-weight:    bold;
         text-transform: uppercase;
       }
     }

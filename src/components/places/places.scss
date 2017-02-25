@@ -9,12 +9,12 @@ ion-content {
   }
 }
 
-$card-font-family: opensans;
+$card-font-family:      opensans;
 $card-border-top-style: solid;
-$card-border-top-width: thin;
-$card-margin: 1%;
-$card-padding: 1%;
-$card-box-shadow: 0 0 2px grey;
+$card-border-top-width: medium;
+$card-margin:           2%;
+$card-padding:          1%;
+$card-box-shadow:       0 0 10px;
 
 ion-card {
   &.places {
@@ -23,34 +23,44 @@ ion-card {
     margin:           $card-margin;
     border-top-width: $card-border-top-width;
     padding:          $card-padding;
-    box-shadow:       $card-box-shadow;
 
     &._0 {
       border-top-color: $font-color-1;
+      box-shadow:       $card-box-shadow $font-color-1;
     }
     &._1 {
       border-top-color: $font-color-2;
+      box-shadow:       $card-box-shadow $font-color-2;
     }
     &._2 {
       border-top-color: $font-color-3;
+      box-shadow:       $card-box-shadow $font-color-3;
     }
     &._3 {
       border-top-color: $font-color-4;
+      box-shadow:       $card-box-shadow $font-color-4;
     }
   }
 }
 
-$card-header-margin: 4%;
+$card-header-margin:         3%;
 $card-header-letter-spacing: 0.1em;
-$card-header-font-size: 1.3em;
+$card-header-font-size:      1.8em;
 $card-header-text-transform: uppercase;
+$card-header-font-weight:    bold;
+$card-header-text-overflow:  ellipsis;
+$card-header-overflow:       hidden;
+$card-header-white-space:    nowrap;
 
 h2 {
   &.places {
     margin:         $card-header-margin;
     letter-spacing: $card-header-letter-spacing;
     font-size:      $card-header-font-size;
-    // text-transform: $card-header-text-transform;
+    font-weight:    $card-header-font-weight;
+    text-overflow:  $card-header-text-overflow;
+    overflow:       $card-header-overflow;
+    white-space:    $card-header-white-space;
 
     &._0 {
       color: $font-color-1;
@@ -67,8 +77,8 @@ h2 {
   }
 }
 
-$card-location-info-margin:         4%;
-$card-location-info-font-size:      0.7em;
+$card-location-info-margin:         3%;
+$card-location-info-font-size:      0.8em;
 $card-location-info-text-transform: uppercase;
 $card-location-info-font-weight:    bold;
 $card-location-info-font-color:     grey;
@@ -96,6 +106,29 @@ ion-col {
     }
 
     &.strip {
+      &._0 {
+        background: $font-color-1;
+      }
+      &._1 {
+        background: $font-color-2;
+      }
+      &._2 {
+        background: $font-color-3;
+      }
+      &._3 {
+        background: $font-color-4;
+      }
+    }
+  }
+}
+
+$fab-button-font-color: white;
+
+button {
+  &.places {
+    &.fab {
+      color: $fab-button-font-color;
+
       &._0 {
         background: $font-color-1;
       }
