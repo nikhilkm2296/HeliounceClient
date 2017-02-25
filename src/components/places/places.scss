@@ -1,69 +1,113 @@
-$bgcolor-1:       #5BABD2;
-$bgcolor-2:       #566FA0;
-$bgcolor-3:       #5B538B;
-$bgcolor-4:       #554468;
-$card-font-color: white;
+$font-color-1: #5BABD2;
+$font-color-2: #566FA0;
+$font-color-3: #5B538B;
+$font-color-4: #554468;
+
+ion-content {
+  &.places {
+    background-color: white;
+  }
+}
+
+$card-font-family: opensans;
+$card-border-top-style: solid;
+$card-border-top-width: thin;
+$card-margin: 1%;
+$card-padding: 1%;
+$card-box-shadow: 0 0 2px grey;
 
 ion-card {
   &.places {
-    color: $card-font-color;
-    font-size: 0.9em;
-    font-family: opensans;
-    margin-bottom: 5px;
-    box-shadow: 0 0 5px black;
+    font-family:      $card-font-family;
+    border-top-style: $card-border-top-style;
+    margin:           $card-margin;
+    border-top-width: $card-border-top-width;
+    padding:          $card-padding;
+    box-shadow:       $card-box-shadow;
 
     &._0 {
-      background: $bgcolor-1;
+      border-top-color: $font-color-1;
     }
     &._1 {
-      background: $bgcolor-2;
+      border-top-color: $font-color-2;
     }
     &._2 {
-      background: $bgcolor-3;
+      border-top-color: $font-color-3;
     }
     &._3 {
-      background: $bgcolor-4;
+      border-top-color: $font-color-4;
     }
   }
 }
 
-ion-col {
-  &.places {
-    // margin: 0;
-    // padding: 0;
-  }
-}
+$card-header-margin: 4%;
+$card-header-letter-spacing: 0.1em;
+$card-header-font-size: 1.3em;
+$card-header-text-transform: uppercase;
 
-ion-row {
+h2 {
   &.places {
-    margin: 0;
-    padding: 0;
-  }
-}
+    margin:         $card-header-margin;
+    letter-spacing: $card-header-letter-spacing;
+    font-size:      $card-header-font-size;
+    // text-transform: $card-header-text-transform;
 
-ion-item {
-  &.places {
-    color: white;
-    &.buttons {
-      border-width: thin;
-      border-color: white;
-      border-style: solid;
+    &._0 {
+      color: $font-color-1;
+    }
+    &._1 {
+      color: $font-color-2;
+    }
+    &._2 {
+      color: $font-color-3;
+    }
+    &._3 {
+      color: $font-color-4;
     }
   }
 }
+
+$card-location-info-margin:         4%;
+$card-location-info-font-size:      0.7em;
+$card-location-info-text-transform: uppercase;
+$card-location-info-font-weight:    bold;
+$card-location-info-font-color:     grey;
 
 p {
   &.places {
-    margin: 0;
-    font-weight: bolder;
+    margin:         $card-location-info-margin;
+    font-size:      $card-location-info-font-size;
+    text-transform: $card-location-info-text-transform;
+    font-weight:    $card-location-info-font-weight;
+    color:          $card-location-info-font-color;
   }
 }
 
-button {
+$card-arrow-font-color: grey;
+$card-arrow-width:      100%;
+$card-arrow-margin:     auto;
+
+ion-col {
   &.places {
-    font-size: 10px;
-    color:     white;
-    margin:    0;
-    padding:   0;
+    &.arrow {
+      color:  $card-arrow-font-color;
+      width:  $card-arrow-width;
+      margin: $card-arrow-margin;
+    }
+
+    &.strip {
+      &._0 {
+        background: $font-color-1;
+      }
+      &._1 {
+        background: $font-color-2;
+      }
+      &._2 {
+        background: $font-color-3;
+      }
+      &._3 {
+        background: $font-color-4;
+      }
+    }
   }
 }

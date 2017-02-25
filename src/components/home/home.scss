@@ -23,8 +23,8 @@ ion-grid {
 ion-content {
   &.home {
     font-family: opensans;
-    background: $main-bcolor;
-    color: $font-color;
+    background:  $main-bcolor;
+    color:       $font-color;
   }
 }
 
@@ -74,10 +74,10 @@ ion-col {
 p {
   &.home {
     &.cell-text {
-      font-size: $font-cell-text-size;
+      font-size:      $font-cell-text-size;
       letter-spacing: $letter-spacing-cell-text;
-      color: $font-color;
-      font-weight: $font-cell-text-weight;
+      color:          $font-color;
+      font-weight:    $font-cell-text-weight;
     }
   }
 }

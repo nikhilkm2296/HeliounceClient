@@ -17,12 +17,12 @@ export class PlaceService {
     '3rd May 16 8:00 PM',
     '24th May 16 2:30 AM'
   ];
-  comment:     string   = "Place has breathtaking view. Never expected to enjoy so much at his place.\
+  comment: string = "Place has breathtaking view. Never expected to enjoy so much at his place.\
   Wouldn't mind visiting this again. You can ping me for more details.. Cheers :)";
 
   getPlaces(): IPlace[] {
     let places = [];
-    for( let i=0; i < 5; i++ ) {
+    for( let i=0; i < 4; i++ ) {
       let place = this.getPlace(
         this.placeNames[ i ],
         this.distances[ i ],

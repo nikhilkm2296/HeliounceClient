@@ -1,61 +1,22 @@
 <ion-content class="places">
-  <ion-card *ngFor="let place of places" class="places _{{ selCategory }}">
-    <img src="assets/app/placeMap.png">
-
-    <ion-item class="places {{ selCategory }}">
-      <ion-row class="places {{ selCategory }}">
-        <ion-col class="places {{ selCategory }}">
-          <p class="places">Name:</p>
-        </ion-col>
-        <ion-col class="places {{ selCategory }}">
-          <p class="places">{{ place.name }}</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <ion-item class="places {{ selCategory }}">
-      <ion-row class="places {{ selCategory }}">
-        <ion-col class="places {{ selCategory }}">
-          <p class="places">Suggested by:</p>
-        </ion-col>
-        <ion-col class="places {{ selCategory }}">
-          <p class="places">{{ place.addedBy.name }}</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <ion-item class="places {{ selCategory }}">
-      <ion-row class="places {{ selCategory }}">
-        <ion-col class="places {{ selCategory }}">
-          <p class="places">Distance (ETA):</p>
-        </ion-col>
-        <ion-col class="places {{ selCategory }}">
-          <p class="places">{{ place.distance }} ( {{ place.ETA }} )</p>
-        </ion-col>
-      </ion-row>
-    </ion-item>
-
-    <ion-item class="places {{ selCategory }}">
-      <ion-row class="places {{ selCategory }}">
-        <ion-col class="places {{ selCategory }}">
-          <button ion-button icon-left clear small class="places">
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>{{ place.noOfLikes }} Likes</div>
-          </button>
-        </ion-col>
-        <ion-col class="places {{ selCategory }}">
-          <button ion-button icon-left clear small class="places">
-            <ion-icon name="text"></ion-icon>
-            <div>{{ place.noOfDislikes }} Dislikes</div>
-          </button>
-        </ion-col>
-        <ion-col class="places {{ selCategory }}">
-          <button ion-button icon-left clear small class="places">
-            <ion-icon name="text"></ion-icon>
-            <div>4 Comments</div>
-          </button>
-        </ion-col>
-      </ion-row>
-    </ion-item>
+  <ion-card class="places _{{ selCategory }}" *ngFor="let place of places">
+    <ion-row>
+      <ion-col width-10 class="places strip _{{ selCategory }}">
+      </ion-col>
+      <ion-col width-80>
+        <h2 class="places _{{ selCategory }}">{{ place.name }}</h2>
+        <p class="places _{{ selCategory }}">
+          <ion-icon name="locate"></ion-icon>
+          {{ place.distance }}
+        </p>
+        <p class="places _{{ selCategory }}">
+          <ion-icon name="alarm"></ion-icon>
+          {{ place.ETA }}
+        </p>
+      </ion-col>
+      <ion-col class="places arrow" width-10>
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </ion-col>
+    </ion-row>
   </ion-card>
 </ion-content>
