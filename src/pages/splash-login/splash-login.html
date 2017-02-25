@@ -1,0 +1,42 @@
+<ion-content class='splash splash-page_{{ index }}'>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="splash title">
+        <p class='splash title'>Heliounce</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <hr class='splash'>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="splash tagline">
+        <p class='splash tagline'>Explorer assistant..</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-footer>
+    <ion-grid class="splash login" *ngIf="!userLoggedIn">
+      <ion-row>
+        <ion-col class="splash fb-button">
+          <button ion-button full (click)="userLogin( 1 )">
+            <ion-icon name="logo-facebook" class="splash login"></ion-icon>
+            <p class="splash fb-button">Login with Facebook</p>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="splash google-button">
+          <button ion-button full class="splash google">
+            <ion-icon name="logo-googleplus" class="splash login"></ion-icon>
+            <p class="splash google-button">Login with Google</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-toolbar class="splash">
+      <ion-spinner name="bubbles" *ngIf="showSpinner"></ion-spinner>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

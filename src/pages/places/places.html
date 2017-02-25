@@ -1,0 +1,61 @@
+<ion-content class="places">
+  <ion-card *ngFor="let place of places" class="places _{{ selCategory }}">
+    <img src="assets/app/placeMap.png">
+
+    <ion-item class="places {{ selCategory }}">
+      <ion-row class="places {{ selCategory }}">
+        <ion-col class="places {{ selCategory }}">
+          <p class="places">Name:</p>
+        </ion-col>
+        <ion-col class="places {{ selCategory }}">
+          <p class="places">{{ place.name }}</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item class="places {{ selCategory }}">
+      <ion-row class="places {{ selCategory }}">
+        <ion-col class="places {{ selCategory }}">
+          <p class="places">Suggested by:</p>
+        </ion-col>
+        <ion-col class="places {{ selCategory }}">
+          <p class="places">{{ place.addedBy.name }}</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item class="places {{ selCategory }}">
+      <ion-row class="places {{ selCategory }}">
+        <ion-col class="places {{ selCategory }}">
+          <p class="places">Distance (ETA):</p>
+        </ion-col>
+        <ion-col class="places {{ selCategory }}">
+          <p class="places">{{ place.distance }} ( {{ place.ETA }} )</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item class="places {{ selCategory }}">
+      <ion-row class="places {{ selCategory }}">
+        <ion-col class="places {{ selCategory }}">
+          <button ion-button icon-left clear small class="places">
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{ place.noOfLikes }} Likes</div>
+          </button>
+        </ion-col>
+        <ion-col class="places {{ selCategory }}">
+          <button ion-button icon-left clear small class="places">
+            <ion-icon name="text"></ion-icon>
+            <div>{{ place.noOfDislikes }} Dislikes</div>
+          </button>
+        </ion-col>
+        <ion-col class="places {{ selCategory }}">
+          <button ion-button icon-left clear small class="places">
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,146 @@
+@import "../../pages/shared/animatewithsass/animate.scss";
+@import "../../pages/shared/fonts/fonts.scss";
+
+$title-font-size: 3.0em;
+$title-font-color: #EDBB34;
+$title-letter-spacing: 0.4em;
+$tagline-font-size: 1.2em;
+$tagline-font-color: white;
+$tagline-letter-spacing: 0.3em;
+$login-button-font-size: 1.3em;
+$login-button-font-color: white;
+$login-button-letter-spacing: 0.1em;
+
+@keyframes animatedBackground {
+	from { background-position: left; }
+	to { background-position: right; }
+}
+
+ion-col {
+	&.splash {
+		font-family: komoda;
+		font-weight: bolder;
+
+		&.title {
+			font-size: $title-font-size;
+			color: $title-font-color;
+			margin-top: 5%;
+			letter-spacing: $title-letter-spacing;
+		}
+
+		&.tagline {
+			letter-spacing: $tagline-letter-spacing;
+			color: $tagline-font-color;
+			font-size: $tagline-font-size;
+			background: black;
+			opacity: 0.5;
+		}
+	}
+}
+
+ion-content {
+	&.splash {
+		background-size: 200% 200%;
+
+		&.splash-page {
+			&_1 {
+				background-image: url("../assets/splash/splash_1.jpg");
+				animation: animatedBackground 12s linear infinite alternate;
+			}
+
+			&_2 {
+				background-image: url("../assets/splash/splash_2.jpg");
+				animation: animatedBackground 12s linear infinite alternate;
+			}
+			&_3 {
+				background-image: url("../assets/splash/splash_3.jpg");
+				animation: animatedBackground 12s linear infinite alternate;
+			}
+	}
+  }
+}
+
+
+hr.splash {
+  background: white;
+}
+
+p {
+  &.splash {
+    @include fadeInUp(
+      $duration: 3s
+    );
+    margin: 5px;
+		font-weight: bolder;
+
+		&.fb-button {
+			font-size: $login-button-font-size;
+			color: $login-button-font-color;
+			letter-spacing: $login-button-letter-spacing;
+		}
+
+		&.google-button {
+			font-size: $login-button-font-size;
+			color: $login-button-font-color;
+			letter-spacing: $login-button-letter-spacing;
+		}
+  }
+}
+
+ion-col {
+  &.splash {
+    &.spinner {
+      text-align: center;
+    }
+  }
+}
+
+ion-icon {
+	&.splash {
+		@include fadeInUp(
+			$duration: 3s
+		);
+		&.button {
+			font-size: $login-button-font-size;
+		}
+	}
+}
+
+button {
+	&.splash {
+		&.google {
+			background-color: #D34836;
+		}
+	}
+}
+
+ion-spinner {
+  * {
+    stroke: #E25D33;
+  }
+
+  &.spinner-circles circle,
+  &.spinner-bubbles circle,
+  &.spinner-dots circle {
+    fill: #E25D33;
+  }
+}
+
+ion-toolbar {
+	&.splash {
+		text-align: center;
+	}
+}
+
+ion-grid {
+	&.splash {
+		&.login {
+		}
+	}
+}
+
+.splash {
+    .toolbar-background {
+	    background: transparent;
+    }
+}

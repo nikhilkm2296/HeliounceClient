@@ -1,0 +1,69 @@
+$bgcolor-1:       #5BABD2;
+$bgcolor-2:       #566FA0;
+$bgcolor-3:       #5B538B;
+$bgcolor-4:       #554468;
+$card-font-color: white;
+
+ion-card {
+  &.places {
+    color: $card-font-color;
+    font-size: 0.9em;
+    font-family: opensans;
+    margin-bottom: 5px;
+    box-shadow: 0 0 5px black;
+
+    &._0 {
+      background: $bgcolor-1;
+    }
+    &._1 {
+      background: $bgcolor-2;
+    }
+    &._2 {
+      background: $bgcolor-3;
+    }
+    &._3 {
+      background: $bgcolor-4;
+    }
+  }
+}
+
+ion-col {
+  &.places {
+    // margin: 0;
+    // padding: 0;
+  }
+}
+
+ion-row {
+  &.places {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+ion-item {
+  &.places {
+    color: white;
+    &.buttons {
+      border-width: thin;
+      border-color: white;
+      border-style: solid;
+    }
+  }
+}
+
+p {
+  &.places {
+    margin: 0;
+    font-weight: bolder;
+  }
+}
+
+button {
+  &.places {
+    font-size: 10px;
+    color:     white;
+    margin:    0;
+    padding:   0;
+  }
+}

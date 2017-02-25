@@ -1,0 +1,43 @@
+<ion-menu class="app menu" [content]="content">
+  <ion-content class="app menu">
+    <ion-list no-lines>
+      <ion-item class="app menu user-profile" >
+        <ion-avatar item-left>
+          <img [src]="userObject.userPicUrl">
+        </ion-avatar>
+        <h2 class="app menu user-profile">{{ userObject.name }}</h2>
+      </ion-item>
+      <button class="app menu item" ion-item (click)="itemSelected(item.name)" *ngFor="let item of menuItems">
+        <ion-icon class="app menu" name="{{ item.icon }}" item-left></ion-icon>
+        {{ item.name }}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-fab right bottom>
+  <button ion-fab mini menuToggle class="home menu"><ion-icon name="menu"></ion-icon></button>
+</ion-fab>
+<ion-fab right bottom>
+  <button ion-fab mini menuToggle class="home menu"><ion-icon name="menu"></ion-icon></button>
+</ion-fab>
+
+<ion-content class="home" #content>
+  <ion-grid class="home">
+    <ion-row
+      class="home"
+      *ngFor="let category of categories; let i=index"
+      (click)="fireCategorySelectedAction( category.categoryIndex )" >
+      <ion-col class="home style-{{ i + 1 }}">
+        <ion-icon class="home" name="{{ category.icon }}"></ion-icon>
+        <p class="home cell-text">{{ category.title }}</p>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row class="home">
+      <ion-col class="home style-{{ addYourCategoryIndex }}">
+        <ion-icon class="home" name="add-circle"></ion-icon>
+        <p class="home cell-text">Add Own Categories</p>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
+</ion-content>

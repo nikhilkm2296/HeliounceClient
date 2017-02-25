@@ -1,0 +1,183 @@
+$main-bcolor: black;
+$card-bottom-border-color: white;
+$font-color: white;
+$cell-bcolor-1: #5BABD2;
+$cell-bcolor-2: #566FA0;
+$cell-bcolor-3: #5B538B;
+$cell-bcolor-4: #554468;
+$font-icon-size: 2.7em;
+$font-cell-text-size: 1.1em;
+$font-cell-text-weight: bolder;
+$letter-spacing-cell-text: 0.1em;
+$icon-margin-top: 0.5em;
+$fab-button-bgcolor: #44CCC9;
+$fab-button-text-color: white;
+
+ion-grid {
+  &.home {
+    padding: 0;
+    height: 100%;
+  }
+}
+
+ion-content {
+  &.home {
+    font-family: opensans;
+    background: $main-bcolor;
+    color: $font-color;
+  }
+}
+
+ion-row {
+  &.home {
+    // border-bottom: solid 1px $card-bottom-border-color;
+    height: 25%;
+    box-shadow: 0 0 15px #000000;
+  }
+}
+
+ion-icon {
+  &.home {
+    font-size: $font-icon-size;
+    margin-top: $icon-margin-top;
+  }
+}
+
+ion-col {
+  &.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: $font-color;
+    text-transform: uppercase;
+
+    &.style-1 {
+      background: $cell-bcolor-1;
+      background-position: center;
+    }
+    &.style-2 {
+      background: $cell-bcolor-2;
+      background-position: center;
+    }
+    &.style-3 {
+      background: $cell-bcolor-3;
+      background-position: center bottom;
+    }
+    &.style-4 {
+      background: $cell-bcolor-4;
+      background-position: center bottom;
+    }
+  }
+}
+
+p {
+  &.home {
+    &.cell-text {
+      font-size: $font-cell-text-size;
+      letter-spacing: $letter-spacing-cell-text;
+      color: $font-color;
+      font-weight: $font-cell-text-weight;
+    }
+  }
+}
+
+button {
+  &.home {
+    &.menu {
+      background:$fab-button-bgcolor;
+      color: $fab-button-text-color;
+    }
+  }
+}
+
+$menu-item-margin-top: 0.2em;
+$menu-bg-color: #44CCC9;
+$menu-icon-color: white;
+$menu-icon-size: 1.4em;
+$menu-font-color: white;
+$menu-font-family: opensans;
+$menu-font-size: 1.2em;
+$menu-letter-spacing: 0.1em;
+$menu-user-profile-height: 100px;
+$menu-user-profile-bgcolor: white;
+$menu-user-profile-font-size: 1.3em;
+$menu-user-profile-font-color: #44CCC9;
+$menu-user-profile-letter-spacing: 0.1em;
+
+ion-content {
+  &.app {
+    &.menu {
+      background: $menu-bg-color;
+    }
+  }
+}
+
+ion-item {
+  &.app {
+    &.menu {
+      &.user-profile {
+        background: $menu-bg-color;
+        font-family: $menu-font-family;
+        text-align: center;
+        color:$menu-user-profile-font-color;
+        background: $menu-user-profile-bgcolor;
+        height: $menu-user-profile-height;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+p {
+  &.app {
+    &.menu {
+      &.item {
+      }
+    }
+  }
+}
+
+h2 {
+  &.app {
+    &.menu {
+      &.user-profile {
+        font-family: $menu-font-family;
+        font-size: $menu-user-profile-font-size;
+        letter-spacing: $menu-user-profile-letter-spacing;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+button {
+  &.app {
+    &.menu {
+      &.item {
+        margin-top: $menu-item-margin-top;
+        font-size: $menu-font-size;
+        color: $menu-font-color;
+        background: $menu-bg-color;
+        letter-spacing: $menu-letter-spacing;
+        font-weight: bold;
+        font-family: $menu-font-family;
+        height: 80px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+ion-icon {
+  &.app {
+    &.menu {
+      color: $menu-icon-color;
+    }
+  }
+}
