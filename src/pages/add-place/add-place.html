@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-slides>
+    <ion-slide class="add-place">
+      <h3>Hey there!!!</h3>
+      <h3>Let me help you with adding a new place</h3>
+      <button ion-button full (click)="goToNextSlide()">Awesome.. Let's start..</button>
+    </ion-slide>
+
+    <ion-slide class="add-place">
+      <h3>What's the name of the place??</h3>
+      <ion-item>
+        <ion-label floating>Name of the Place</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <button ion-button full (click)="goToNextSlide()">Continue..</button>
+    </ion-slide>
+
+    <ion-slide class="add-place">
+      <h3>Detecting you location!!! Please wait!!</h3>
+      <button ion-button full (click)="goToNextSlide()">Save..</button>
+    </ion-slide>
+
+    <ion-slide class="add-place">
+      <h3>Thank you for adding the place!!</h3>
+      <button ion-button full (click)="goToHome()">Take me home..</button>
+    </ion-slide>
+</ion-slides></ion-content>

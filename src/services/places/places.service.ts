@@ -6,6 +6,7 @@ import { Category } from '../../enums/category';
 @Injectable()
 export class PlaceService {
   _selCategory: Category;
+  _selPlace:    IPlace;
   userPicUrl:   string   = 'https://graph.facebook.com/1436380746381163/picture?type=large';
   userNames:    string[] = [ 'User 1', 'User 2', 'User 3', 'User Long Name 4', 'User 5' ];
   placeNames:   string[] = [ 'Place 1', 'Place 2', 'Place 3', 'Place Long Name 4', 'Place 5' ];
@@ -99,6 +100,14 @@ export class PlaceService {
 
   getSelectedCategory(): Category {
     return this._selCategory;
+  }
+
+  setSelectedPlace( place: IPlace ): void {
+    this._selPlace = place;
+  }
+
+  getSelectedPlace(): IPlace {
+    return this._selPlace;
   }
 
 }

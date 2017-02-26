@@ -3,11 +3,11 @@
     <ion-list no-lines>
       <ion-item class="app menu user-profile" >
         <ion-avatar item-left>
-          <img [src]="userObject.userPicUrl">
+          <img src="{{ userObject.userPicURL }}">
         </ion-avatar>
         <h2 class="app menu user-profile">{{ userObject.name }}</h2>
       </ion-item>
-      <button class="app menu item" ion-item (click)="itemSelected(item.name)" *ngFor="let item of menuItems">
+      <button class="app menu item" ion-item (click)="itemSelected(item.menuIndex)" *ngFor="let item of menuItems">
         <ion-icon class="app menu" name="{{ item.icon }}" item-left></ion-icon>
         {{ item.name }}
       </button>
@@ -15,14 +15,14 @@
   </ion-content>
 </ion-menu>
 
-<ion-fab right bottom>
-  <button ion-fab mini menuToggle class="home menu"><ion-icon name="menu"></ion-icon></button>
-</ion-fab>
-<ion-fab right bottom>
-  <button ion-fab mini menuToggle class="home menu"><ion-icon name="menu"></ion-icon></button>
-</ion-fab>
 
 <ion-content class="home" #content>
+  <ion-fab right bottom>
+    <button ion-fab mini menuToggle class="home menu"><ion-icon name="menu"></ion-icon></button>
+  </ion-fab>
+  <ion-fab right bottom>
+    <button ion-fab mini menuToggle class="home menu"><ion-icon name="menu"></ion-icon></button>
+  </ion-fab>
   <ion-grid class="home">
     <ion-row
       class="home"

@@ -1,0 +1,86 @@
+<ion-content>
+  <ion-grid class="place-details addedBy _{{ _selCategory }}">
+    <ion-row class="place-details addedBy">
+      <ion-col class="place-details addedBy" width-80>
+        <img
+          src="{{ _selPlace.addedBy.userPicUrl }}"
+          class="place-details addedBy _{{ _selCategory }}"
+        >
+        <p class="place-details addedBy">{{ _selPlace.addedBy.name }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="place-details addedBy strip">
+      <ion-col class="place-details addedBy">
+        <p class="place-details addedBy user-details">
+          Rank<br>1
+        </p>
+      </ion-col>
+      <ion-col class="place-details addedBy">
+        <p class="place-details addedBy user-details">
+          Tot. places<br>153
+        </p>
+      </ion-col>
+      <ion-col class="place-details addedBy">
+        <p class="place-details addedBy user-details">
+          Tot. visited<br>179
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="place-details details">
+    <ion-row class="place-details details top">
+      <ion-col class="place-details details">
+        <p class="place-details details icon _{{ _selCategory }}">
+          <ion-icon name="thumbs-up"></ion-icon>
+        </p>
+        <p class="place-details details _{{ _selCategory }}">
+          Like - {{ _selPlace.noOfLikes }}
+        </p>
+      </ion-col>
+      <ion-col class="place-details details">
+        <p class="place-details details icon _{{ _selCategory }}">
+          <ion-icon name="thumbs-down"></ion-icon>
+        </p>
+        <p class="place-details details _{{ _selCategory }}">
+          Dislike - {{ _selPlace.noOfDislikes }}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="place-details details bottom">
+      <ion-col class="place-details details">
+        <p class="place-details details icon _{{ _selCategory }}">
+          <ion-icon name="images"></ion-icon>
+        </p>
+        <p class="place-details details _{{ _selCategory }}">
+          Photos - 25
+        </p>
+      </ion-col>
+      <ion-col class="place-details details">
+        <p class="place-details details icon _{{ _selCategory }}">
+          <ion-icon name="chatbubbles"></ion-icon>
+        </p>
+        <p class="place-details details _{{ _selCategory }}">
+          Reviews - 112
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="place-details details">
+      <ion-col class="place-details details">
+        <p class="place-details details icon _{{ _selCategory }}">
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </p>
+        <p class="place-details details _{{ _selCategory }}">
+          Not visited
+        </p>
+      </ion-col>
+      <ion-col class="place-details details">
+        <p class="place-details details icon _{{ _selCategory }}">
+          <ion-icon name="flag"></ion-icon>
+        </p>
+        <p class="place-details details _{{ _selCategory }}">
+          Report - 5
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

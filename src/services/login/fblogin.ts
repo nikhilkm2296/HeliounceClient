@@ -13,7 +13,13 @@ export class FacebookLoginService {
   }
 
   login(): Promise<any> {
+    // Facebook.browserInit( LoginConstants.FB_ID, LoginConstants.FB_VERSION );
     return Facebook.login( LoginConstants.FB_PERMISSIONS );
+  }
+
+
+  logout(): Promise<any> {
+    return Facebook.logout();
   }
 
   getUserInformationFromChannel(): Promise<any> {
@@ -45,9 +51,13 @@ export class FacebookLoginService {
         picture:     userInfo.picture,
         channel:     LoginChannel.Facebook,
         userId:      userInfo.id,
-        userPicUrl:  userInfo.userPicURL,
+        userPicURL:  userInfo.userPicURL,
         accessToken: 'SomeToken'
       }
     );
+  }
+
+  removeUserInfoToStorage() {
+    return this._appService.removeFromNativeStorage( LoginConstants.USER_KEY );
   }
 }

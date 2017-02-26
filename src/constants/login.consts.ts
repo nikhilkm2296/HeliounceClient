@@ -8,6 +8,5 @@ export class LoginConstants {
   public static FB_API_PREFIX = "/me?fields=";
   public static FB_USER_PIC_PREFIX = "https://graph.facebook.com/";
   public static FB_USER_PIC_SUFFIX = "/picture?type=large";
-
   public static USER_KEY = "USER";
 }

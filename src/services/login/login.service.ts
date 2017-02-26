@@ -9,10 +9,10 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
   private _userObject: IUser;
-  private _channel: LoginChannel;
+  private _channel:    LoginChannel;
 
   constructor(
-    private _appService: AppService,
+    private _appService:     AppService,
     private _fbLoginService: FacebookLoginService
   ) {
   }
@@ -27,10 +27,20 @@ export class LoginService {
 
   userLogin( channel: LoginChannel ): Promise<any> {
     this._channel = channel;
-    if ( this._channel == LoginChannel.Facebook ) {
+    if ( channel == LoginChannel.Facebook ) {
       return this._fbLoginService.login();
     } else {
       console.log( 'Unsupported Channel for login..' );
+      return null;
+    }
+  }
+
+  userLogout(): Promise<any> {
+    if ( this._channel == LoginChannel.Facebook ) {
+      console.log( 'Logging out using Facebook..' );
+      return this._fbLoginService.logout();
+    } else {
+      console.log( 'Unsupported Channel for log..' );
       return null;
     }
   }
@@ -52,9 +62,6 @@ export class LoginService {
     return this._userObject;
   }
 
-  userLogout(): void {
-  }
-
   setUserIdentifier( userId: string ) {
     if ( this._channel == LoginChannel.Facebook ) {
       return this._fbLoginService.setUserId( userId );
@@ -73,7 +80,13 @@ export class LoginService {
 
   storeUserInfoIntoStorage( userInfo: any ): Promise<any> {
     if ( this._channel == LoginChannel.Facebook ) {
-      return this._fbLoginService.storeUserInfoToStorage( userInfo )
+      return this._fbLoginService.storeUserInfoToStorage( userInfo );
+    }
+  }
+
+  removeUserInfoIntoStorage(): Promise<any> {
+    if ( this._channel == LoginChannel.Facebook ) {
+      return this._fbLoginService.removeUserInfoToStorage();
     }
   }
 }

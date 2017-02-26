@@ -23,7 +23,7 @@ export class SplashAndLoginPage implements OnInit {
   }
 
   ngOnInit() {
-    let env = this;
+    let env          = this;
     let loginService = this._loginService;
     this._loginService.checkUserSavedInStorage()
     .then(
@@ -32,11 +32,16 @@ export class SplashAndLoginPage implements OnInit {
         console.log( user );
         loginService.setLoggedInUser( user );
         loginService.setUserIdentifier( user.userId );
-        env._navController.push( HomePage );
+        setTimeout( function() {
+            env._navController.push( HomePage );
+          },
+          3000
+        );
       },
       function( error ) {
         console.log( 'User not logged in..' );
         env.userLoggedIn = false;
+        env.showSpinner  = false;
       }
     );
   }
@@ -48,6 +53,7 @@ export class SplashAndLoginPage implements OnInit {
     this._loginService.userLogin( channel )
     .then(
       function( response ) {
+        console.log( "User logged in successfully.." );
         let userId = response.authResponse.userID;
         loginService.setUserIdentifier( userId );
         loginService.getUserInformation()
@@ -56,7 +62,6 @@ export class SplashAndLoginPage implements OnInit {
             userInfo.userPicURL = loginService.getUserProfilePicURL();
             userInfo.userId     = userId;
             loginService.setLoggedInUser( userInfo );
-            console.log( 'Saving user..' );
             loginService.storeUserInfoIntoStorage( userInfo )
             .then(
               function( userInfo ) {

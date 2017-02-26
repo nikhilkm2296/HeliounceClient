@@ -4,7 +4,7 @@
       <ion-icon name="more"></ion-icon>
     </button>
     <ion-fab-list side="top">
-      <button ion-fab mini class="places fab _{{ selCategory }}">
+      <button ion-fab mini class="places fab _{{ selCategory }}" (click)="addPlaceWizard()">
         <ion-icon name="globe"></ion-icon>
       </button>
       <button ion-fab mini class="places fab _{{ selCategory }}" (click)="goHome()">
@@ -13,7 +13,7 @@
     </ion-fab-list>
   </ion-fab>
   <ion-card class="places _{{ selCategory }}" *ngFor="let place of places">
-    <ion-row wrap>
+    <ion-row wrap (click)="showPlaceDetails( place )">
       <ion-col width-90>
         <h2 class="places _{{ selCategory }}">{{ place.name }}</h2>
         <p class="places _{{ selCategory }}">
