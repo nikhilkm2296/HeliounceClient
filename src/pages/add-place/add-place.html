@@ -1,27 +1,44 @@
 <ion-content>
   <ion-slides>
     <ion-slide class="add-place">
-      <h3>Hey there!!!</h3>
-      <h3>Let me help you with adding a new place</h3>
-      <button ion-button full (click)="goToNextSlide()">Awesome.. Let's start..</button>
+      <h2 class="add-place hey">Hey there!!!</h2>
+      <h3 class="add-place hey">Let me help you with adding a new place</h3>
+      <ion-footer>
+        <button class="add-place" ion-button full (click)="goToAskName()">
+          Let's start..
+        </button>
+      </ion-footer>
     </ion-slide>
 
     <ion-slide class="add-place">
-      <h3>What's the name of the place??</h3>
-      <ion-item>
-        <ion-label floating>Name of the Place</ion-label>
-        <ion-input type="text"></ion-input>
+      <h3>Please enter name of the place..</h3>
+      <ion-item class="add-place nameofplace">
+        <ion-input type="text" placeholder="Name of the place.."></ion-input>
       </ion-item>
-      <button ion-button full (click)="goToNextSlide()">Continue..</button>
+      <ion-footer>
+        <button class="add-place nameofplace" ion-button full (click)="detectLocation()">
+          Continue..
+        </button>
+      </ion-footer>
     </ion-slide>
 
     <ion-slide class="add-place">
-      <h3>Detecting you location!!! Please wait!!</h3>
-      <button ion-button full (click)="goToNextSlide()">Save..</button>
+      <div id="map">
+      </div>
+      <!-- <h3>Detecting you location!!! Please wait!!</h3> -->
+      <ion-footer>
+        <button class="add-place" ion-button full (click)="goToThankYou()">
+          Save..
+        </button>
+      </ion-footer>
     </ion-slide>
 
     <ion-slide class="add-place">
       <h3>Thank you for adding the place!!</h3>
-      <button ion-button full (click)="goToHome()">Take me home..</button>
+      <ion-footer>
+        <button class="add-place" ion-button full (click)="goToHome()">
+          Take me home..
+        </button>
+      </ion-footer>
     </ion-slide>
 </ion-slides></ion-content>

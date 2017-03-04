@@ -1,6 +1,67 @@
+@import "../../pages/shared/animatewithsass/animate.scss";
+@import "../../pages/shared/fonts/fonts.scss";
+
+$bg-color: #44CCC9;
+$font-family: feronia;
+
 ion-slide {
   &.add-place {
-    background-color: #5B538B;
+    font-family: $font-family;
     color: white;
+    background-color: $bg-color;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    font-size: 25px;
+  }
+}
+
+h2 {
+  &.add-place {
+    &.hey {
+      @include fadeInRight(
+        $duration: 1s,
+        $delay: 1s
+      );
+    }
+  }
+}
+
+h3 {
+  &.add-place {
+    &.hey {
+      @include fadeInRight(
+        $duration: 1s,
+        $delay: 2s
+      );
+    }
+  }
+}
+
+button {
+  &.add-place {
+    font-weight: bolder;
+    font-family: opensans;
+    background-color: $bg-color;
+    color: white;
+    @include fadeInUp(
+    $duration: 1s,
+    $delay: 3s
+    );
+
+    .hey {
+    }
+
+    .nameofplace {
+
+    }
+  }
+}
+
+ion-item {
+  &.add-place {
+    &.nameofplace {
+      background: $bg-color;
+      color: white;
+    }
   }
 }
