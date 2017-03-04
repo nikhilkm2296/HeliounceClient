@@ -21,6 +21,7 @@ export class AddPlacePage implements OnInit {
   @ViewChild( Slides ) slides: Slides;
   private _latitude: number;
   private _longitude: number;
+  private _map: GoogleMap;
 
   constructor( private _navController: NavController,
     private _placeService: PlaceService
@@ -41,22 +42,30 @@ export class AddPlacePage implements OnInit {
   }
 
   prepareMap(): void {
-     let element: HTMLElement = document.getElementById('map');
-     let map = new GoogleMap( element );
-     map.one( GoogleMapsEvent.MAP_READY )
-     .then( () => console.log( 'Map is ready!' ) );
-     let latLng: GoogleMapsLatLng = new GoogleMapsLatLng(
-       this._latitude,
-       this._longitude
-     );
-     let markerOptions: GoogleMapsMarkerOptions = {
+    let env = this;
+    let element: HTMLElement = document.getElementById('map');
+    this._map = new GoogleMap( element );
+    this._map.one( GoogleMapsEvent.MAP_READY )
+    .then( function() {
+      console.log( 'Map is ready!' );
+      let latLng: GoogleMapsLatLng = new GoogleMapsLatLng(
+       env._latitude,
+       env._longitude
+      );
+      let markerOptions: GoogleMapsMarkerOptions = {
        position: latLng,
        title: 'Ionic'
-     };
-     map.addMarker( markerOptions )
-    .then( ( marker: GoogleMapsMarker ) => {
+      };
+      env.addMarkerToMap( markerOptions );
+    });
+   }
+
+   addMarkerToMap( markerOptions: GoogleMapsMarkerOptions ): void {
+     this._map.addMarker( markerOptions )
+     .then( ( marker: GoogleMapsMarker ) => {
+       console.log( 'Marker added to the map...' );
        marker.showInfoWindow();
-     });
+     })
    }
 
   goToAskName(): void {
