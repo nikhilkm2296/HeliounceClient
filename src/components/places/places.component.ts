@@ -24,7 +24,7 @@ export class PlacesPage {
   }
 
   goHome(): void {
-    this._navController.push( HomePage );
+    this._navController.setRoot( HomePage );
   }
 
   showPlaceDetails( place: IPlace ): void {

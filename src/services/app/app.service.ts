@@ -1,6 +1,8 @@
 import { NativeStorage } from 'ionic-native';
 import { Platform } from 'ionic-angular';
 import { Injectable } from '@angular/core';
+import { IMenu } from '../../models/menu';
+import { MenuItem } from '../../enums/menuitem';
 
 @Injectable()
 export class AppService {
@@ -43,4 +45,36 @@ export class AppService {
     return NativeStorage.clear();
   }
 
+  getMenuList(): IMenu[] {
+    return [ {
+      name: 'Home',
+      icon: 'home',
+      menuIndex: MenuItem.HOME
+    },
+    {
+      name: 'Profile',
+      icon: 'person',
+      menuIndex: MenuItem.PROFILE
+    },
+    {
+      name: 'Your Places',
+      icon: 'pin',
+      menuIndex: MenuItem.YOUR_PLACES
+    },
+    {
+      name: 'Invite',
+      icon: 'person-add',
+      menuIndex: MenuItem.INVITE
+    },
+    {
+      name: 'Logout',
+      icon: 'log-out',
+      menuIndex: MenuItem.LOGOUT
+    },
+    {
+      name: 'About',
+      icon: 'information-circle',
+      menuIndex: MenuItem.ABOUT
+    } ]
+  }
 }

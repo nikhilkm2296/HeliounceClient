@@ -29,11 +29,10 @@ export class SplashAndLoginPage implements OnInit {
     .then(
       function( user: IUser ) {
         console.log( 'User has already logged in.. Saved user details..' );
-        console.log( user );
         loginService.setLoggedInUser( user );
         loginService.setUserIdentifier( user.userId );
         setTimeout( function() {
-            env._navController.push( HomePage );
+            env._navController.setRoot( HomePage );
           },
           3000
         );

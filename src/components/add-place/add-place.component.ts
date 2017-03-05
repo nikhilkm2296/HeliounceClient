@@ -35,32 +35,42 @@ export class AddPlacePage implements OnInit {
     .then( resp => {
       env._latitude  = resp.coords.latitude;
       env._longitude = resp.coords.longitude;
-      env.prepareMap();
     }).catch((error) => {
       console.log('Error getting location', error);
     });
   }
 
   prepareMap(): void {
-    let env = this;
     let element: HTMLElement = document.getElementById('map');
-    this._map = new GoogleMap( element );
-    this._map.one( GoogleMapsEvent.MAP_READY )
-    .then( function() {
-      console.log( 'Map is ready!' );
-      let latLng: GoogleMapsLatLng = new GoogleMapsLatLng(
-       env._latitude,
-       env._longitude
-      );
-      let markerOptions: GoogleMapsMarkerOptions = {
-       position: latLng,
-       title: 'Ionic'
-      };
-      env.addMarkerToMap( markerOptions );
-    });
+    console.log( this._map );
+    if( !this._map ) {
+      this._map = new GoogleMap( element );
+      let env = this;
+      this._map.one( GoogleMapsEvent.MAP_READY )
+      .then( function() {
+        env.addMarkerToMap();
+      });
+    }
    }
 
-   addMarkerToMap( markerOptions: GoogleMapsMarkerOptions ): void {
+   addMarkerToMap(): void {
+     let latLng: GoogleMapsLatLng = new GoogleMapsLatLng(
+      this._latitude,
+      this._longitude
+     );
+     let position: CameraPosition = {
+       target: latLng,
+       zoom:   18,
+       tilt:   30
+     };
+     this._map.moveCamera( position );
+     this._map.setMyLocationEnabled( true );
+     let markerOptions: GoogleMapsMarkerOptions = {
+       position: latLng,
+       title:    'Your location. Long press to drag the marker..',
+       draggable: true,
+       flat:      true
+     };
      this._map.addMarker( markerOptions )
      .then( ( marker: GoogleMapsMarker ) => {
        console.log( 'Marker added to the map...' );
@@ -76,6 +86,7 @@ export class AddPlacePage implements OnInit {
 
   detectLocation(): void {
     this.slides.lockSwipes( false );
+    this.prepareMap();
     this.slides.slideNext();
     this.slides.lockSwipes( true );
   }

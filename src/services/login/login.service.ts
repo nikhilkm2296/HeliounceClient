@@ -56,6 +56,9 @@ export class LoginService {
 
   setLoggedInUser( user: IUser ) {
     this._userObject = user;
+    if( user.channel ) {
+      this._channel = user.channel;
+    }
   }
 
   getLoggedInUser(): IUser {
@@ -81,6 +84,10 @@ export class LoginService {
   storeUserInfoIntoStorage( userInfo: any ): Promise<any> {
     if ( this._channel == LoginChannel.Facebook ) {
       return this._fbLoginService.storeUserInfoToStorage( userInfo );
+    } else {
+      console.log( 'Unsupported Channel for login..' );
+      console.log( this._channel );
+      return null;
     }
   }
 

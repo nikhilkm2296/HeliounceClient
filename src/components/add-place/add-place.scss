@@ -65,3 +65,11 @@ ion-item {
     }
   }
 }
+
+div {
+  &.add-place {
+    &.map-area {
+      height: 100em;
+    }
+  }
+}

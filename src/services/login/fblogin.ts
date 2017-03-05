@@ -13,7 +13,6 @@ export class FacebookLoginService {
   }
 
   login(): Promise<any> {
-    // Facebook.browserInit( LoginConstants.FB_ID, LoginConstants.FB_VERSION );
     return Facebook.login( LoginConstants.FB_PERMISSIONS );
   }
 
